@@ -7,7 +7,7 @@ var db = new sqlite3.Database('./teste.db', sqlite3.OPEN_READONLY)
 console.time('total')
 db.serialize(function () {
   console.time('consulta')
-  db.all('SELECT * FROM comandas where IDMasterConta <= 100', function (err, rows) {
+  db.all('SELECT * FROM comandas --where IDMasterConta <= 100', function (err, rows) {
     if (err) {
       console.error(err)
     }
