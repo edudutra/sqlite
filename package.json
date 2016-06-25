@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "csv": "^1.1.0",
     "fs-extra": "^0.30.0",
+    "progress": "^1.1.8",
+    "sql": "^0.70.0",
     "sqlite3": "^3.1.4",
     "underscore": "^1.8.3"
   },

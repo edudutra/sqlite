@@ -1,2 +1,4 @@
 node_modules
 file.txt
+.DS_Store
+teste.db

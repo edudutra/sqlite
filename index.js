@@ -1,13 +1,24 @@
 var _ = require('underscore')
 var fs = require('fs-extra')
+var ProgressBar = require('progress')
 var sqlite3 = require('sqlite3').verbose()
 var db = new sqlite3.Database('./teste.db', sqlite3.OPEN_READONLY)
+
+
+// var bar = new ProgressBar(':bar', { total: 100 });
+// var timer = setInterval(function () {
+//   bar.tick();
+//   if (bar.complete) {
+//     console.log('\ncomplete\n');
+//     clearInterval(timer);
+//   }
+// }, 100);
 
 
 console.time('total')
 db.serialize(function () {
   console.time('consulta')
-  db.all('SELECT * FROM comandas --where IDMasterConta <= 100', function (err, rows) {
+  db.all('SELECT * FROM comandas where IDMasterConta <= 1000000', function (err, rows) {
     if (err) {
       console.error(err)
     }
